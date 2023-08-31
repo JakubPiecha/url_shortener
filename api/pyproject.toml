@@ -34,8 +34,28 @@ target-version = ['py311']
 include = '\.pyi?$'
 extend-exclude = '''
 /(
-    | blib2to3
-    | tests/data
-    | profiling
+    | \git/ # exclude a directory
+    | \.mypy_cache/ # exclude a directory
+    | \.pytest_cache/ # exclude a directory
+    | .*\.pyi? # excluded generated files
+    | .*\.json # excluded netadata files
+    | .*\.md # excluded documentation
+    | .*\.toml # excluded configurationa files
+    | .*\.yaml # excluded configurationa files
+    | .*\.yml # excluded configurationa files
+    | .*\.txt # excluded configurationa files
+    | .*\.lock # excluded configurationa files
+    | .*\.sh # excluded configurationa files
+    | .*\.log # excluded configurationa files
 )/
 '''
+
+[tool.mypy]
+python_version = 3.11
+ignore_missing_imports = 1
+
+plugins =["mypy_django_plugin.main", "mypy_drf_plugin.main"]
+
+
+[tool.django-stubs]
+django_settings_module = "config.settings"
