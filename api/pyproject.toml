@@ -9,8 +9,15 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 django = "4.2.4"
+pytest = "7.4.0"
+pytest-django = "4.5.2"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+python_files = ["test_*.py"]
