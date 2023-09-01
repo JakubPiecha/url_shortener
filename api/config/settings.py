@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "drf_spectacular",
     "users.apps.UsersConfig",
+    "shortener.apps.ShortenerConfig",
 ]
 
 MIDDLEWARE = [
