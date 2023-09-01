@@ -9,7 +9,7 @@ ENV POETRY_VERSION=1.5.1 \
     POETRY_HOME='/usr/local'
 
 COPY ./install-poetry.py ./
-RUN python3 install-poetry.py ./ --version 1.5.1 \
+RUN python3 install-poetry.py --version 1.5.1 \
     && $POETRY_HOME/bin/poetry --version
 
 WORKDIR /app
@@ -18,7 +18,7 @@ COPY pyproject.toml poetry.lock ./
 
 RUN poetry install --no-interaction --no-ansi --no-root
 
-RUN apt-get update && apt-get install -y netcat
+RUN apt-get update && apt-get install -y netcat-traditional
 
 COPY ./entrypoint.sh ./
 
