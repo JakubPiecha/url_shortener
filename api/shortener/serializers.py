@@ -12,7 +12,7 @@ class URLSerializer(serializers.ModelSerializer):
         fields = ("short_url",)
 
     def get_short_url(self, obj):
-        return self.context.get("request").build_absolute_uri(obj.short_url)
+        return self.context.get("request").build_absolute_uri("/") + obj.short_url
 
 
 class OriginalURLSerializer(serializers.ModelSerializer):
