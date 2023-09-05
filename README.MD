@@ -52,8 +52,12 @@ Start docker containers
 
 Go to your client and types
 ```bash
- http://0.0.0.0:8000/api/schema/swagger-ui/
+ http://0.0.0.0:8000/api/schema/swagger-ui/ 
+ or
+ http://localhost:8000/api/schema/swagger-ui/ 
 ```
+You can use Postman with predefined Postman collections:
+- load postman collections from ./api/postman_collections/*.postman_collection.json
 
 ## Set Environment Variables
 

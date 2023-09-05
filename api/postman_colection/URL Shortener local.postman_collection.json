@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "fa3017e2-729a-4155-93ad-6ac732468130",
+		"name": "URL Shortener local",
+		"description": "StartFragmentDjango Rest Framework-based URL Shortener app. This robust and secure platform allows you to effortlessly shorten long URLs, making them more user-friendly and easy to share. With RESTful APIs, you can seamlessly integrate URL shortening into your applications and services.EndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26035390"
+	},
+	"item": [
+		{
+			"name": "/api/v1/urls/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://ujarani.com/509443\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8000/api/v1/urls/",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"urls",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
