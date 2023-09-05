@@ -4,7 +4,7 @@ from django.db import models
 
 
 class URL(models.Model):
-    url = models.CharField(max_length=2000)
+    url = models.URLField(max_length=2000)
     short_url = models.CharField(max_length=30)
     created_at = models.DateTimeField(auto_now_add=True)
 
