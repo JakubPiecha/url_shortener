@@ -7,6 +7,7 @@ services:
     env_file:
       - ./envs/api.env
       - ./envs/postgres.env
+      - ./envs/redis.env
     ports:
       - "8000:8000"
     depends_on:
@@ -16,6 +17,7 @@ services:
       - ./api:/app
     networks:
       - postgres_network
+      - redis_network
 
   postgres:
     image: postgres:15.4
@@ -28,10 +30,24 @@ services:
     networks:
       - postgres_network
 
+  redis:
+    image: redis:latest
+    ports:
+      - '6379:6379'
+    volumes:
+      - 'redis-data:/data'
+    env_file:
+      - envs/redis.env
+    networks:
+      - redis_network
+
 volumes:
   postgres_volume:
+  redis-data:
 
 networks:
   postgres_network:
+    driver: bridge
+  redis_network:
     driver: bridge
 

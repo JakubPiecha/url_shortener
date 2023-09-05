@@ -41,6 +41,7 @@ Set Environment Variables
 ```bash
   cp ./envs/api.default.env ./envs/api.env  
   cp ./envs/postgres.default.env ./envs/postgres.env 
+  cp ./envs/redis.default.env ./envs/redis.env 
   # set variable values
 ```
 
@@ -69,7 +70,10 @@ To run this project, you will need to add the following environment variables to
 
 `DJ_ALLOWED_HOSTS=` - Allowed hosts for Django
 
+`DJ_CSRF_TRUSTED_ORIGINS=` - Domain list for validation
+
 `LOGGING_LVL=` Python logging package levels
+
 `DJ_SU_USERNAME=` - Default superuser name
 
 `DJ_SU_PASSWORD=` - Default superuser email
@@ -88,6 +92,12 @@ Also variables to your ./envs/postgres.env file
 `POSTGRES_HOST=` Database host need to add docker service name
 
 `POSTGRES_PORT=` Database ports
+
+Variables for Redis ./envs/redis.env file
+
+`REDIS_HOST=` - Running server Redis host
+
+`REDIS_PORT=` - Running server Redis port
 
 
 ## Running Tests
