@@ -14,7 +14,7 @@ Django Rest Framework-based URL Shortener app. This robust and secure platform a
 
 ## Demo
 
-[URL Shortener heroku](https://heroku.com/)
+[URL Shortener heroku](https://salty-eyrie-21851-de0797a7d781.herokuapp.com/api/schema/swagger-ui/)
 
 
 ## Tech Stack

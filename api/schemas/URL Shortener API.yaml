@@ -1,0 +1,82 @@
+openapi: 3.0.3
+info:
+  title: URL Shortener API
+  version: 1.0.0
+  description: |-
+    Discover the power of concise, efficient link management with our Django Rest Framework-based URL Shortener app.
+        This robust and secure platform allows you to effortlessly shorten long URLs, making them more user-friendly
+        and easy to share. With RESTful APIs, you can seamlessly integrate URL shortening into your applications and services.
+        Gain insights into link performance with advanced analytics.
+        Elevate your online presence and enhance user experience with our Django Rest Framework URL Shortener today.
+        Experience the ultimate in URL shortening with our Django Rest Framework-based application.
+        Your links are not just shortened; they're hashed and fortified for maximum security.
+        Safeguard your online presence and user data while enjoying the benefits of concise, shareable links.
+        With RESTful APIs, seamlessly integrate secure URL shortening into your projects.
+        Rest easy knowing your links are protected, and gain valuable insights with our advanced analytics.
+        Elevate your online strategy with the safest Django Rest Framework URL Shortener available!
+paths:
+  /api/v1/urls/:
+    post:
+      operationId: api_v1_urls_create
+      description: |-
+        Create:
+        Creates short URLs from original URL.
+        Expected JSON data:
+        example:
+        {
+            "url": "https://www.example.com/very/long/url/to/be/shortened"
+        }
+        Where url (string, required): The long URL that needs to be shortened.
+
+        Response:
+        Successful creation of a short URL, the API will respond with a JSON object containing the following information:
+
+        short_url (string): The shortened URL that can be used to redirect to the original URL.
+        Example:
+        JSON DATA
+        {
+            "short_url": "https://salty-eyrie-21851-de0797a7d781.herokuapp.com/abcd123"
+        }
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OriginalURL'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OriginalURL'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OriginalURL'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OriginalURL'
+          description: ''
+components:
+  schemas:
+    OriginalURL:
+      type: object
+      properties:
+        url:
+          type: string
+          maxLength: 2000
+      required:
+      - url
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

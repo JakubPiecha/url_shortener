@@ -1,6 +1,7 @@
 .idea
 
 **/*.pyc
+venv
 
 db.sqlite3
 .mypy_cache
