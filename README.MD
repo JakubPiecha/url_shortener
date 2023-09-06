@@ -19,7 +19,7 @@ Django Rest Framework-based URL Shortener app. This robust and secure platform a
 
 ## Tech Stack
 
-**Server:** Python, Django, Django Rest Framework, Docker, Postgres
+**Server:** Python, Django, Django Rest Framework, Docker, Postgres, Redis
 
 
 ## Run Locally
