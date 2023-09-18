@@ -111,7 +111,7 @@ To run tests, run the following command
 
 ## Coverage report
 
-![Coverage report](https://raw.githubusercontent.com/JakubPiecha/url_shortener/master/screenshots/coverage.png)
+![Coverage report](https://raw.githubusercontent.com/JakubPiecha/url_shortener/master/screenshots/test_coverage.png)
 
 
 ## Author
