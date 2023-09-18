@@ -46,15 +46,6 @@ class CreateShortURLApiView(generics.CreateAPIView):
 
 
 class ShortUrlRedirectView(RedirectView):
-    """
-    get:
-    Redirects the user to the original URL from the provided short URL.
-    Expected the short URLto be part of the path, like:
-    "https://salty-eyrie-21851-de0797a7d781.herokuapp.com/abcd123"
-    Where "abcd123" is the short URL.
-
-    The response is a HTTP 302 redirect to the original URL.
-    """
 
     def get_redirect_url(self, *args: Any, short_url: str, **kwargs: Any) -> str | None:
         url = cache.get(short_url)

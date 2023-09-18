@@ -1,6 +1,5 @@
-from django.db import models
 
-# Create your models here.
+from django.db import models
 
 
 class URL(models.Model):
@@ -18,3 +17,5 @@ class URL(models.Model):
     def save(self, *args, **kwargs):
         if not len(URL.objects.filter(short_url=self.short_url)):
             super().save(*args, **kwargs)
+
+
